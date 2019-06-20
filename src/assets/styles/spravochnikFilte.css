@@ -1,0 +1,42 @@
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  display: flex;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  pointer-events: none;
+}
+
+.mat-form-field-appearance-outline  {
+  padding: 5px 3px 0px 5px;
+}
+
+input.mat-input-element {
+  margin-top: -14px;
+  margin-bottom: -11px;
+  height: 18px;
+  display: flex;
+}
+
+
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-empty.mat-form-field-label {
+  display: contents;
+}
+
+.mat-raised-button{
+  background-color: #137461
+}
+
+mat-select {
+  margin-bottom: -11px;
+  margin-top: -11px;
+  height: 18px;
+  display: block;
+}
+mat-option {
+  border-top: 1px solid #119769;
+  border-right: 5px solid #119769;
+  border-left: 5px solid #119769;
+}

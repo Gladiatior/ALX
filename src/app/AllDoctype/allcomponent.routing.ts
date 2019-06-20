@@ -1,0 +1,118 @@
+import {Routes} from '@angular/router';
+import {BankComponent} from '../Spravochnik/bank/bank.component';
+import {TashkilotComponent} from '../Spravochnik/tashkilot/tashkilot.component';
+import {HomeComponent} from '../layouts/home/home.component';
+import {UsersComponent} from '../layouts/users/users.component';
+import {BegonaUtlarTuriComponent} from '../Spravochnik/begona-utlar-turi/begona-utlar-turi.component';
+import {BlankalarComponent} from '../Spravochnik/blankalar/blankalar.component';
+import {BulimlarComponent} from '../Spravochnik/bulimlar/bulimlar.component';
+import {BulinmalarComponent} from '../Spravochnik/bulinmalar/bulinmalar.component';
+import {DavlatlarComponent} from '../Spravochnik/davlatlar/davlatlar.component';
+import {FaoliyatTuriComponent} from '../Spravochnik/faoliyat-turi/faoliyat-turi.component';
+import {FermerXujaligiComponent} from '../Spravochnik/fermer-xujaligi/fermer-xujaligi.component';
+import {FumigatsiyaTuriComponent} from '../Spravochnik/fumigatsiya-turi/fumigatsiya-turi.component';
+import {KasalliklarTuriComponent} from '../Spravochnik/kasalliklar-turi/kasalliklar-turi.component';
+import {KurashUsullariComponent} from '../Spravochnik/kurash-usullari/kurash-usullari.component';
+import {LavozimlarComponent} from '../Spravochnik/lavozimlar/lavozimlar.component';
+import {MassivlarComponent} from '../Spravochnik/massivlar/massivlar.component';
+import {MaxsulotlarComponent} from '../Spravochnik/maxsulotlar/maxsulotlar.component';
+import {MfyComponent} from '../Spravochnik/mfy/mfy.component';
+import {OmborComponent} from '../Spravochnik/ombor/ombor.component';
+import {PreparatlarComponent} from '../Spravochnik/preparatlar/preparatlar.component';
+import {QadoqlarComponent} from '../Spravochnik/qadoqlar/qadoqlar.component';
+import {QFYComponent} from '../Spravochnik/qfy/qfy.component';
+import {QushimchaDekloratsiyaComponent} from '../Spravochnik/qushimcha-dekloratsiya/qushimcha-dekloratsiya.component';
+import {TumanlarComponent} from '../Spravochnik/tumanlar/tumanlar.component';
+import {UlchovBirligiComponent} from '../Spravochnik/ulchov-birligi/ulchov-birligi.component';
+import {ViloyatlarComponent} from '../Spravochnik/viloyatlar/viloyatlar.component';
+import {XodimlarComponent} from '../Spravochnik/xodimlar/xodimlar.component';
+import {YetkazibBeruvchilarComponent} from '../Spravochnik/yetkazib-beruvchilar/yetkazib-beruvchilar.component';
+import {ZararkunandalarTuriComponent} from '../Spravochnik/zararkunandalar-turi/zararkunandalar-turi.component';
+import {BlankaChiqimiComponent} from '../Documets/blanka-chiqimi/blanka-chiqimi.component';
+import {BlankaKirimiComponent} from '../Documets/blanka-kirimi/blanka-kirimi.component';
+import {EkspertizaComponent} from '../Documets/ekspertiza/ekspertiza.component';
+import {EksportComponent} from '../Documets/eksport/eksport.component';
+import {FumigatsiyaComponent} from '../Documets/fumigatsiya/fumigatsiya.component';
+import {FumigatsiyaNazoratiComponent} from '../Documets/fumigatsiya-nazorati/fumigatsiya-nazorati.component';
+import {KarantinRuxsatnomasiComponent} from '../Documets/karantin-ruxsatnomasi/karantin-ruxsatnomasi.component';
+import {KurikComponent} from '../Documets/kurik/kurik.component';
+import {LabaratoriyaComponent} from '../Documets/labaratoriya/labaratoriya.component';
+import {PreparatChiqimiComponent} from '../Documets/preparat-chiqimi/preparat-chiqimi.component';
+import {PreparatKirimiComponent} from '../Documets/preparat-kirimi/preparat-kirimi.component';
+import {RejaBuyichaNazoratiComponent} from '../Documets/reja-buyicha-nazorati/reja-buyicha-nazorati.component';
+import {RejadanTashqariNazoratComponent} from '../Documets/rejadan-tashqari-nazorat/rejadan-tashqari-nazorat.component';
+import {TranzitYukKurigiComponent} from '../Documets/tranzit-yuk-kurigi/tranzit-yuk-kurigi.component';
+import {YozilganSertifikatlarComponent} from '../Documets/yozilgan-sertifikatlar/yozilgan-sertifikatlar.component';
+import {PlanKiritishComponent} from '../Documets/plan-kiritish/plan-kiritish.component';
+import {BegonaUtlarComponent} from '../Spravochnik/begona-utlar/begona-utlar.component';
+import {KasalliklarComponent} from '../Spravochnik/kasalliklar/kasalliklar.component';
+import {ZararkunandalarComponent} from '../Spravochnik/zararkunandalar/zararkunandalar.component';
+import {FumigatsiyaForSpravochnikComponent} from '../Spravochnik/fumigatsiya-for-spravochnik/fumigatsiya-for-spravochnik.component';
+import {XuquqlarComponent} from '../Spravochnik/xuquqlar/xuquqlar.component';
+import {FaoliyatYunalishlariComponent} from '../Spravochnik/faoliyat-yunalishlari/faoliyat-yunalishlari.component';
+import {XulosalarComponent} from '../Spravochnik/xulosalar/xulosalar.component';
+import {KurashishUsuliXulosaComponent} from '../Spravochnik/kurashish-usuli-xulosa/kurashish-usuli-xulosa.component';
+import {LabaratoriyaXulosaComponent} from '../Spravochnik/labaratoriya-xulosa/labaratoriya-xulosa.component';
+import {XodimBlankaChiqimiComponent} from '../Documets/xodim-blanka-chiqimi/xodim-blanka-chiqimi.component';
+import {IshdanBushatishBuyrugiComponent} from '../Documets/ishdan-bushatish-buyrugi/ishdan-bushatish-buyrugi.component';
+import {LavozimniUzgartirishBuyrugiComponent} from '../Documets/lavozimni-uzgartirish-buyrugi/lavozimni-uzgartirish-buyrugi.component';
+
+export const AllComponentRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'bank', component: BankComponent},
+  {path: 'xuquqlar', component: XuquqlarComponent},
+  {path: 'tashkilot', component: TashkilotComponent},
+  {path: 'user', component: UsersComponent},
+  {path: 'begonaUtlar', component: BegonaUtlarComponent},
+  {path: 'begonaUtlarTuri', component: BegonaUtlarTuriComponent},
+  {path: 'blankalar', component: BlankalarComponent},
+  {path: 'bulimlar', component: BulimlarComponent},
+  {path: 'bulinmalar', component: BulinmalarComponent},
+  {path: 'davlatlar', component: DavlatlarComponent},
+  {path: 'faoliyatTuri', component: FaoliyatTuriComponent},
+  {path: 'fermerXujaligi', component: FermerXujaligiComponent},
+  {path: 'fumigatsiyaForSpravochnik', component: FumigatsiyaForSpravochnikComponent},
+  {path: 'fumigatsiyaTuri', component: FumigatsiyaTuriComponent},
+  {path: 'kasalliklar', component: KasalliklarComponent},
+  {path: 'kasalliklarTuri', component: KasalliklarTuriComponent},
+  {path: 'kurashUsullari', component: KurashUsullariComponent},
+  {path: 'lavozimlar', component: LavozimlarComponent},
+  {path: 'massivlar', component: MassivlarComponent},
+  {path: 'maxsulotlar', component: MaxsulotlarComponent},
+  {path: 'mfy', component: MfyComponent},
+  {path: 'ombor', component: OmborComponent},
+  {path: 'preparatlar', component: PreparatlarComponent},
+  {path: 'qadoqlar', component: QadoqlarComponent},
+  {path: 'qfy', component: QFYComponent},
+  {path: 'qushimchaDekloratsiya', component: QushimchaDekloratsiyaComponent},
+  {path: 'tumanlar', component: TumanlarComponent},
+  {path: 'ulchovBirligi', component: UlchovBirligiComponent},
+  {path: 'viloyatlar', component: ViloyatlarComponent},
+  {path: 'xodimlar', component: XodimlarComponent},
+  {path: 'yetkazibBeruvchilar', component: YetkazibBeruvchilarComponent},
+  {path: 'zararkunandalar', component: ZararkunandalarComponent},
+  {path: 'zararkunandalarTuri', component: ZararkunandalarTuriComponent},
+  {path: 'blankaChiqimi', component: BlankaChiqimiComponent},
+  {path: 'blankaKirimi', component: BlankaKirimiComponent},
+  {path: 'ekspertiza', component: EkspertizaComponent},
+  {path: 'eksport', component: EksportComponent},
+  {path: 'fumigatsiya', component: FumigatsiyaComponent},
+  {path: 'fumigatsiyaNazorati', component: FumigatsiyaNazoratiComponent},
+  {path: 'karantinRuxsatnomasi', component: KarantinRuxsatnomasiComponent},
+  {path: 'kurik', component: KurikComponent},
+  {path: 'labaratoriya', component: LabaratoriyaComponent},
+  {path: 'preparatChiqimi', component: PreparatChiqimiComponent},
+  {path: 'preparatKirimi', component: PreparatKirimiComponent},
+  {path: 'rejaBuyichaNazorat', component: RejaBuyichaNazoratiComponent},
+  {path: 'rejadanTashqariNazorat', component: RejadanTashqariNazoratComponent},
+  {path: 'tranzitYukKurigi', component: TranzitYukKurigiComponent},
+  {path: 'yozilganSertifikatlar', component: YozilganSertifikatlarComponent},
+  {path: 'planKiritish', component: PlanKiritishComponent},
+  {path: 'faloyitaYunalishlari', component: FaoliyatYunalishlariComponent},
+  {path: 'xulosalar', component: XulosalarComponent},
+  {path: 'kurashishUsuliXulosa', component: KurashishUsuliXulosaComponent},
+  {path: 'labaratoriyaXulosa', component: LabaratoriyaXulosaComponent},
+  {path: 'xodimBlankaChiqimi', component: XodimBlankaChiqimiComponent},
+  {path: 'ishdanBushatishBuyrugi', component: IshdanBushatishBuyrugiComponent},
+  {path: 'lavozimniUzgartirishBuyrugi', component: LavozimniUzgartirishBuyrugiComponent}
+];

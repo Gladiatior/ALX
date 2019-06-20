@@ -1,0 +1,15 @@
+<button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5"> <img src="{{usersPhoto}}" alt="user" class="profile-pic" > </button>
+<mat-menu #profile="matMenu" class="mymegamenu" appAccordion>
+  <button mat-menu-item appAccordionLink routerLinkActive="selected" group="foyda">
+    <a appAccordionLink [routerLink]="['/','user']">
+      <mat-icon>account_box</mat-icon>
+      Фойдаланувчи хақида
+    </a>
+  </button>
+  <button
+    mat-menu-item
+  >
+    <a href="#" (click)="goLogin($event)">Дастурдан чиқиш</a>
+    <mat-icon>exit_to_app</mat-icon> Дастурдан чиқиш
+  </button>
+</mat-menu>

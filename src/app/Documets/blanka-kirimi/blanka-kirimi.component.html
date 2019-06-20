@@ -1,0 +1,605 @@
+<div class="main-container">
+  <div class="mat-card">
+    <button mat-mini-fab
+            style="margin: -4px 21px -1px -1px; position: absolute; right: 10px; background-color: #0d4238; width: 30px; height: 30px"
+            (click)="goHome()">
+      <mat-icon aria-label="Example icon-button with a heart icon"
+                style="margin-top: -7px; font-size: 20px">clear
+      </mat-icon>
+    </button>
+    <div class="mat-card-header">
+      <div class="mat-action-row"
+           style="justify-content: left; padding: 2px 0px 0px 5px; border-top-color: rgba(0, 0, 0, 0);">
+        <span><mat-icon
+          style="margin-top: 12px;margin: 8px 9px 0px 0px;color: aliceblue;>details">dns</mat-icon></span>
+        <h4 class="mat-card-title" style="display: flex;">
+          Бланка кирими рўйхати
+        </h4>
+      </div>
+    </div>
+    <div class="mat-card-content" style="padding: 12px 6px 9px 9px">
+      <div class="example-button-row" style="padding: 0px 0px 10px 0px; text-align: center;">
+        <button
+          mat-raised-button color="primary"
+          matTooltip="Яратиш (Ins)"
+          matTooltipClass="matToolTipCss"
+          matTooltipPosition="below"
+          (click)="addObject()">
+          <mat-icon
+            style="margin-left: -11px;">
+            add_circle_outline
+          </mat-icon>
+          Яратиш
+        </button>
+        <button
+          (click)="editObject()"
+          mat-raised-button color="primary"
+          matTooltip="Ўзгартириш (F2)"
+          matTooltipClass="matToolTipCss"
+          matTooltipPosition="below">
+          <mat-icon
+            style="margin-left: -11px;">
+            create
+          </mat-icon>
+          Ўзгартириш
+        </button>
+        <button
+          (click)="copyObject()"
+          mat-raised-button color="primary"
+          matTooltip="Нусха кўчириш (F9)"
+          matTooltipClass="matToolTipCss"
+          matTooltipPosition="below">
+          <mat-icon
+            style="margin-left: -11px;">
+            file_copy
+          </mat-icon>
+          Нусха кўчириш
+        </button>
+        <button
+          [disabled]="Buttons"
+          (click)="deleteObjectForm()"
+          mat-raised-button color="primary"
+          matTooltip="Ўчириш (Del)"
+          matTooltipClass="matToolTipCss"
+          matTooltipPosition="below">
+          <mat-icon
+            style="margin-left: -11px;">
+            delete_sweep
+          </mat-icon>
+          Ўчириш
+        </button>
+        <button
+          [disabled]="Buttons"
+          mat-raised-button color="primary"
+          matTooltip="Филтер (Alt + 9)"
+          matTooltipPosition="below"
+          matTooltipClass="matToolTipCss"
+          (click)="opeFilterDialog()">
+          <mat-icon
+            style="margin-left: -11px;">
+            filter_list
+          </mat-icon>
+          Филтер
+        </button>
+        <button
+          (click)="onResetForm()"
+          mat-raised-button color="primary"
+          matTooltip="Янгилаш (F8)"
+          matTooltipClass="matToolTipCss"
+          matTooltipPosition="below">
+          <mat-icon
+            style="margin-left: -11px;">
+            refresh
+          </mat-icon>
+          Янгилаш
+        </button>
+        <button
+          (click)="backTable()"
+          mat-raised-button color="primary"
+          matTooltip="Жадвал бўлимига қайтиш (Alt + 1)"
+          matTooltipClass="matToolTipCss"
+          matTooltipPosition="below">
+          <mat-icon
+            style="margin-left: -7px;">
+            subdirectory_arrow_left
+          </mat-icon>
+        </button>
+        <button
+          (click)="backForm()"
+          mat-raised-button color="primary"
+          matTooltip="Яратиш бўлимига қайтиш (Alt + 2)"
+          matTooltipClass="matToolTipCss"
+          matTooltipPosition="below">
+          <mat-icon
+            style="margin-right: -5px;">
+            subdirectory_arrow_right
+          </mat-icon>
+        </button>
+      </div>
+
+      <mat-horizontal-stepper #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <div *ngIf="!reloading; else reloadingBlock">
+              <div *ngIf="totalDocs > 0; else empty">
+                <div class="table-wrap">
+                  <table mat-table [dataSource]="list" class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="tasdiqlash">
+                      <th mat-header-cell *matHeaderCellDef style="width: 30px; padding: 18px;"></th>
+                      <td mat-cell *matCellDef="let element" style="min-width: 2px;max-width: 8px;padding-left: 4px;">
+                        <mat-icon *ngIf="element.tasdiqlash"
+                                  style="font-size: 22px;">
+                          playlist_add_check
+                        </mat-icon>
+                      </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="id">
+                      <th mat-header-cell *matHeaderCellDef style="width: 57px; padding: 0px;"> No.</th>
+                      <td mat-cell class="id" *matCellDef="let element"> {{element.tartibRaqam}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="sana">
+                      <th mat-header-cell *matHeaderCellDef style="min-width: 95px;"> Сана</th>
+                      <td mat-cell *matCellDef="let element"
+                          style="padding: 0px 0px 0px 5px;"
+                          matTooltip="{{element.sana | date: 'dd.MM.yyyy'}}"
+                          matTooltipClass="matToolTipCss"> {{element.sana | date: 'dd.MM.yyyy'}} </td>
+                    </ng-container>
+
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="ombor">
+                      <th mat-header-cell *matHeaderCellDef style="min-width: 95px;"> Омбор</th>
+                      <td mat-cell *matCellDef="let element"
+                          matTooltip="{{element.omborlarName}}"
+                          matTooltipClass="matToolTipCss"> {{element.omborlarName}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="qabulQildi">
+                      <th mat-header-cell *matHeaderCellDef style="min-width: 130px;"> Қабул қилди</th>
+                      <td mat-cell *matCellDef="let element"
+                          matTooltip="{{element.qabulQildi}}"
+                          matTooltipClass="matToolTipCss"> {{element.qabulQildi}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="kimOrqali">
+                      <th mat-header-cell *matHeaderCellDef style="min-width: 120px;"> Ким орқали</th>
+                      <td mat-cell *matCellDef="let element"
+                          matTooltip="{{element.kimOrqali}}"
+                          matTooltipClass="matToolTipCss"> {{element.kimOrqali}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="kimdan">
+                      <th mat-header-cell *matHeaderCellDef style="min-width: 120px;"> Кимдан</th>
+                      <td mat-cell *matCellDef="let element"
+                          matTooltip="{{element.yetkazibBeruvchilarName}}"
+                          matTooltipClass="matToolTipCss"> {{element.yetkazibBeruvchilarName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fakturaNomer">
+                      <th mat-header-cell *matHeaderCellDef style="min-width: 120px;"> Фактура №</th>
+                      <td mat-cell *matCellDef="let element"
+                          matTooltip="{{element.fakturaNomer}}"
+                          matTooltipClass="matToolTipCss"> {{element.fakturaNomer}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fakturaSana">
+                      <th mat-header-cell *matHeaderCellDef style="min-width: 140px;"> Фактура санаси</th>
+                      <td mat-cell *matCellDef="let element"
+                          matTooltip="{{element.fakturaSana | date: 'dd.MM.yyyy'}}"
+                          matTooltipClass="matToolTipCss"> {{element.fakturaSana | date: 'dd.MM.yyyy'}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ishonchnomaNomer">
+                      <th mat-header-cell *matHeaderCellDef style="min-width: 130px;"> Ишончнома №</th>
+                      <td mat-cell *matCellDef="let element"
+                          matTooltip="{{element.ishonchnomaNomer}}"
+                          matTooltipClass="matToolTipCss"> {{element.ishonchnomaNomer}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ishonchnomaSana">
+                      <th mat-header-cell *matHeaderCellDef style="border-right: 1px solid #137461;min-width: 170px;">Ишончнома санаси </th>
+                      <td mat-cell *matCellDef="let element"
+                          matTooltip="{{element.ishonchnomaSana | date: 'dd.MM.yyyy'}}"
+                          matTooltipClass="matToolTipCss"> {{element.ishonchnomaSana | date: 'dd.MM.yyyy'}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.active]="row == selectedItem"
+                        (click)="selectedRow(row)"></tr>
+                  </table>
+                </div>
+                <div class="mat-action-row"
+                     style="justify-content: flex-end; padding: 0px 5px 18px 15px; border-top-color: rgba(0, 0, 0, 0); ">
+                  <button
+                    mat-raised-button color="primary"
+                    style="height: 35px; margin: 7px 5px 7px 0px; min-width: 24px;width: 38px;" matTooltip="Рўйхат боши"
+                    matTooltipClass="matToolTipCss"
+                    matTooltipPosition="below"
+                    [disabled]="!hasPrevPage"
+                    (click)="hasPrevPageGet()">
+                    <mat-icon style="margin-left: -11px;">
+                      skip_previous
+                    </mat-icon>
+                  </button>
+                  <button
+                    mat-raised-button color="primary"
+                    style="height: 35px; margin: 7px 5px 7px 0px; min-width: 24px;width: 38px;"
+                    matTooltip="Олдинга"
+                    matTooltipClass="matToolTipCss"
+                    matTooltipPosition="below"
+                    [disabled]="prevPage === null"
+                    (click)="prevPageGet()">
+                    <mat-icon style="margin-left: -11px;">
+                      keyboard_arrow_left
+                    </mat-icon>
+                  </button>
+                  <mat-form-field
+                    appearance="outline"
+                    style="height: 40px; font-size: 13px;max-width: 66px;padding: 5px 4px 0px 0px; font-weight: 800"
+                    matTooltip="Рўйхат"
+                    matTooltipPosition="below"
+                    matTooltipClass="matToolTipCss">
+                    <input
+                      formControlName="firstCtrl"
+                      matInput
+                      name="page"
+                      type="number"
+                      min="1"
+                      (change)="getPage()"
+                      [(ngModel)]="page">
+                  </mat-form-field>
+                  <span
+                    style="padding: 13px 0px 0px 0px;min-width: 53px;font-size: 18px;font-weight: 600;">/ {{totalPages}}</span>
+                  <button
+                    mat-raised-button color="primary"
+                    style="height: 35px; margin: 7px 5px 7px 0px; min-width: 24px;width: 38px;"
+                    matTooltip="Кейинга"
+                    matTooltipClass="matToolTipCss"
+                    matTooltipPosition="below"
+                    [disabled]="nextPage === null"
+                    (click)="nextPageGet()">
+                    <mat-icon
+                      style="margin-left: -11px;">
+                      keyboard_arrow_right
+                    </mat-icon>
+                  </button>
+                  <button
+                    mat-raised-button color="primary"
+                    style="height: 35px; margin: 7px 5px 7px 0px; min-width: 24px;width: 38px;"
+                    matTooltip="Рўйхат охири"
+                    matTooltipPosition="below"
+                    matTooltipClass="matToolTipCss"
+                    [disabled]="!hasNextPage"
+                    (click)="hasNextPageGet()">
+                    <mat-icon style="margin-left: -11px;">
+                      skip_next
+                    </mat-icon>
+                  </button>
+                </div>
+              </div>
+              <ng-template #empty>
+                <div class="align-items-center" style="text-align: center; font-size: 24px; height: 40px;">
+                  Хеч қандай маълумот йўқ
+                </div>
+              </ng-template>
+            </div>
+            <ng-template #reloadingBlock>
+              <div class="align-items-center">
+                <mat-spinner style="left: 40%"></mat-spinner>
+              </div>
+            </ng-template>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup"
+                (ngSubmit)="onSubmit()">
+            <div class="mat-card" style="margin: 10px 0px 0px 0px">
+              <div class="mat-card-content" style="padding: 0px">
+                <div class="mat-action-row"
+                     style="justify-content: left; padding: 0px 0px 0px 15px; border-top-color: rgba(0, 0, 0, 0);">
+              <span><mat-icon
+                style="margin-top: 12px;margin: 8px 9px 0px 0px;  color: #119769;>details">dns</mat-icon></span>
+                  <h4 class="mat-card-title" style="display: flex; margin-top: 10px;">
+                    Бланка кирими яратиш
+                  </h4>
+                </div>
+              </div>
+              <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+                   fxLayoutAlign="center" style="margin-bottom: -16px">
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="20%">
+                  <mat-label style="font-size: 14px; ">Бланка кирими №</mat-label>
+                  <input
+                    formControlName="tartibRaqam"
+                    matInput
+                    id="tartibRaqam"
+                    type="number"
+                    [(ngModel)]="tartibRaqamLength"
+                    [ngClass]="{'invalid': secondFormGroup.get('tartibRaqam').invalid && secondFormGroup.get('tartibRaqam').touched}"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="20%">
+                  <mat-label style="font-size: 14px;" type="text">дан</mat-label>
+                  <input
+                    formControlName="sana"
+                    matInput
+                    id="sana"
+                    type="date"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="30%">
+                  <mat-label style="font-size: 14px;">Омбор</mat-label>
+                  <mat-select style="max-height: 186px;" [(value)]="omborlarName">
+                    <mat-option style="height: 27px;  font-size: 14px">
+                      <mat-icon>format_clear</mat-icon>
+                      Танлашни бекор қилиш
+                    </mat-option>
+                    <mat-option
+                      *ngFor="let ombor of omborlar"
+                      [value]="ombor"
+                      style="height: 27px; font-size: 14px"
+                      (click)="onChangeOmborlar(ombor)"
+                    >
+                      {{ombor.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="30%">
+                  <mat-label style="font-size: 14px;" type="text">Маъсул шахс</mat-label>
+                  <input
+                    formControlName="qabulQildi"
+                    matInput
+                    id="qabulQildi"
+                    type="text"
+                  >
+                </mat-form-field>
+              </div>
+              <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+                   fxLayoutAlign="center" style="margin-bottom: -16px">
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="50%">
+                  <mat-label style="font-size: 14px;">Кимдан</mat-label>
+                  <mat-select style="max-height: 186px;" [(value)]="yetkazibBeruvchilarName">
+                    <mat-option style="height: 27px;  font-size: 14px">
+                      <mat-icon>format_clear</mat-icon>
+                      Танлашни бекор қилиш
+                    </mat-option>
+                    <mat-option
+                      *ngFor="let yetkazibBeruvchi of yetkazibBeruvchilar"
+                      [value]="yetkazibBeruvchi"
+                      style="height: 27px; font-size: 14px"
+                      (click)="onChangeYetkazibBeruvchilar(yetkazibBeruvchi)"
+                    >
+                      {{yetkazibBeruvchi.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="50%">
+                  <mat-label style="font-size: 14px;" type="text">Ким оркали</mat-label>
+                  <input
+                    formControlName="kimOrqali"
+                    matInput
+                    id="kimOrqali"
+                    type="text"
+                  >
+                </mat-form-field>
+              </div>
+              <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+                   fxLayoutAlign="center" style="margin-bottom: -16px">
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="25%">
+                  <mat-label style="font-size: 14px;" type="text">Фактура №</mat-label>
+                  <input
+                    formControlName="fakturaNomer"
+                    matInput
+                    id="fakturaNomer"
+                    type="text"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="25%">
+                  <mat-label style="font-size: 14px;" type="text">Фактура сана</mat-label>
+                  <input
+                    formControlName="fakturaSana"
+                    matInput
+                    id="fakturaSana"
+                    type="date"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="25%">
+                  <mat-label style="font-size: 14px;" type="text">Ишончнома №</mat-label>
+                  <input
+                    formControlName="ishonchnomaNomer"
+                    matInput
+                    id="ishonchnomaNomer"
+                    type="text"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="25%">
+                  <mat-label style="font-size: 14px;" type="text">Ишончнома сана</mat-label>
+                  <input
+                    formControlName="ishonchnomaSana"
+                    matInput
+                    id="ishonchnomaSana"
+                    type="date"
+                  >
+                </mat-form-field>
+              </div>
+              <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+                   fxLayoutAlign="center" style="margin-bottom: 35px">
+                <div class="table-wrapdoc">
+                  <table id="customers">
+                    <thead class="widget-header">
+                    <tr>
+                      <th style="width: 50px">
+                        No.
+                      </th>
+                      <th>
+                        Бланка
+                      </th>
+                      <th>
+                        Бланка(...дан)
+                      </th>
+                      <th>
+                        Бланка(...гача)
+                      </th>
+                      <th>
+                        Сони
+                      </th>
+                      <th>
+                        Нархи
+                      </th>
+                      <th style="border-right: 1px solid #137461;">
+                        Сумма
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let col of jadvalBlanKirimi"
+                        (click)="selectedJadval(col)"
+                        [class.active]="col == selectBlankalar">
+                      <td style="text-align: center">{{col.tartibRaqam}}</td>
+                      <td>{{col.blankalarName}}</td>
+                      <td>{{col.blankadan}}</td>
+                      <td>{{col.blankagacha}}</td>
+                      <td>{{col.soni}}</td>
+                      <td>{{col.narxi}}</td>
+                      <td>{{col.summasi}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+                   fxLayoutAlign="center" style="margin-bottom: -16px; margin-top: 19px;">
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="10%">
+                  <mat-label style="font-size: 14px;" type="text">№</mat-label>
+                  <input
+                    formControlName="tartibRaqamBlanka"
+                    matInput
+                    id="tartibRaqamBlanka"
+                    type="number"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="30%">
+                  <mat-label style="font-size: 14px;">Бланка</mat-label>
+                  <mat-select style="max-height: 186px;" [(value)]="blankalarName">
+                    <mat-option style="height: 27px;  font-size: 14px">
+                      <mat-icon>format_clear</mat-icon>
+                      Танлашни бекор қилиш
+                    </mat-option>
+                    <mat-option
+                      *ngFor="let blanka of blankalar"
+                      [value]="blanka"
+                      style="height: 27px; font-size: 14px"
+                      (click)="onChangeBlankalar(blanka)"
+                    >
+                      {{blanka.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="15%">
+                  <mat-label style="font-size: 14px;">Бланка(...дан)</mat-label>
+                  <input
+                    formControlName="blankadan"
+                    matInput
+                    id="blankadan"
+                    type="number"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="15%">
+                  <mat-label style="font-size: 14px;">Бланка(...гача)</mat-label>
+                  <input
+                    (change)="onChangeBlankagacha($event)"
+                    formControlName="blankagacha"
+                    matInput
+                    id="blankagacha"
+                    type="number"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="15%">
+                  <mat-label style="font-size: 14px;">Сони</mat-label>
+                  <input
+                    (change)="onChangeBlankadan($event)"
+                    formControlName="soni"
+                    matInput
+                    id="soni"
+                    type="number"
+                  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="height: 70px" fxFlex="15%">
+                  <mat-label style="font-size: 14px;">Нархи</mat-label>
+                  <input
+                    formControlName="narxi"
+                    matInput
+                    id="narxi"
+                    type="number"
+                  >
+                </mat-form-field>
+              </div>
+              <div class="example-button-row" style="padding: 0px 0px 10px 0px; text-align: left;">
+                <button
+                  type="button"
+                  mat-raised-button color="primary"
+                  (click)="adder()"
+                >
+                  <mat-icon style="margin-left: -11px;">note_add</mat-icon>
+                  Жадвалга кўшиш
+                </button>
+                <button
+                  type="button"
+                  mat-raised-button color="primary"
+                  (click)="editJadVal()"
+                >
+                  <mat-icon style="margin-left: -11px;">border_color</mat-icon>
+                  Ўзгартириш
+                </button>
+                <button
+                  type="button"
+                  mat-raised-button color="primary"
+                  (click)="deleteJadval()"
+                >
+                  <mat-icon style="margin-left: -11px;">delete_outline</mat-icon>
+                  Ўчириш
+                </button>
+              </div>
+              <div class="example-button-row" style="padding: 7px 0px 10px 0px; text-align: center;">
+                <button
+                  type="submit"
+                  [disabled]="secondFormGroup.invalid || secondFormGroup.disabled"
+                  mat-raised-button
+                  color="primary"
+                  matTooltip="Сақлаш ва чиқиш (Ctrl+Enter)"
+                  matTooltipPosition="below"
+                  matTooltipClass="matToolTipCss">
+                  <mat-icon
+                    style="margin-left: -11px;">
+                    save
+                  </mat-icon>
+                  Сақлаш ва чиқиш
+                </button>
+                <button
+                  type="button"
+                  (click)="onCloseForm()"
+                  mat-raised-button
+                  color="primary"
+                  matTooltip="Чиқиш (Esc)"
+                  matTooltipClass="matToolTipCss"
+                  matTooltipPosition="below">
+                  <mat-icon style="margin-left: -11px;">
+                    reply_all
+                  </mat-icon>
+                  Чиқиш
+                </button>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </div>
+</div>
+
+

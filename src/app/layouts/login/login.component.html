@@ -1,0 +1,73 @@
+<div class="wrapper fadeInDown" style="background-color: #119769">
+  <div class="login-page">
+    <div class="login-spacer"></div>
+    <div class="login-container">
+      <div id="login-fab" class="mdl-color--accent mdl-color-text--white">
+        <!--<i id="lock-icon" class="material-icons">lock</i>-->
+        <img src="/assets/images/asosiy.png" alt="logo" width="150" height="160"/>
+      </div>
+      <h4 class="card-heading" style="color: #0c493d; font-weight: 600">
+        ЎЗБЕКИСТОН РЕСПУБЛИКАСИ
+      </h4>
+      <h4 class="card-heading" style="color: #0c493d; font-weight: 600">
+        ВАЗИРЛАР МАХКАМАСИ ХУЗУРИДАГИ
+      </h4>
+      <h4 class="card-heading" style="color: #0c493d; font-weight: 600">
+        ЎСИМЛИКЛАР КАРАНТИНИ ДАВЛАТ
+      </h4>
+      <h4 class="card-heading" style="color: #0c493d; font-weight: 600">
+        ИНСПЕКЦИЯСИ
+      </h4>
+      <form
+        class="login-form"
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+      >
+        <mat-form-field appearance="outline">
+          <mat-label>Login номини киритинг!</mat-label>
+          <mat-icon matSuffix>person</mat-icon>
+          <input
+            formControlName="name"
+            id="name"
+            [ngClass]="{'invalid': form.get('name').invalid && form.get('name').touched}"
+            matInput
+            type="text"
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Махфий рақам киритинг!</mat-label>
+          <mat-icon matSuffix>lock</mat-icon>
+          <input
+            formControlName="password"
+            id="password"
+            [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
+            matInput
+            type='password'
+          >
+          <mat-error *ngIf="form.get('password').invalid && form.get('password').touched">
+            <mat-error
+              *ngIf="form.get('password').errors['minlength'] && form.get('password').errors['minlength']['requiredLength']">
+              Махфий рақам камида {{form.get('password').errors['minlength']['requiredLength']}} харфдан иборат бўлиши
+              шарт!.
+              Хозир сиз {{form.get('password').errors['minlength']['actualLength']}} киритдингиз!
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="buttons">
+          <div class="login">
+            <button
+              type ="submit"
+              mat-raised-button
+              color="primary"
+              [disabled]="form.invalid || form.disabled"
+              >
+              ДАСТРУГА КИРИШ
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

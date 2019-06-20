@@ -1,0 +1,32 @@
+<div class="main-container" >
+  <mat-toolbar color="primary" class="topbar telative" style="background-color:#137461">
+    <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+      <mat-icon>format_indent_decrease</mat-icon>
+    </button>
+    <div class="navbar-header" >
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets/images/asosiy.png" alt="homepage" height="50" width="50">
+      </a>
+    </div>
+    <span fxShow="false" fxShow.gt-xs style="height: 55px">
+      <h6 style="font-size: 16px; height: 20px; color: #e8fdf8; font-weight: 600">ЎЗБЕКИСТОН РЕСПУБЛИКАСИ ВАЗИРЛАР МАХКАМАСИ</h6>
+      <h6 style="font-size: 16px; height: 20px; color: #e8fdf8; font-weight: 600">ХУЗУРИДАГИ ЎСИМЛИКЛАР КАРАНТИНИ ДАВЛАТ ИНСПЕКЦИЯСИ</h6>
+    </span>
+    <span fxFlex></span>
+    <app-header></app-header>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0" style="background-color: #d8d8d8;">
+    <mat-sidenav #snav id="snav"
+                 class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'"
+                 fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches"
+                  style="background: linear-gradient(to bottom,  #119769 50%,#119769 80%); color: #e8fdf8">
+      <app-sidebar ></app-sidebar>
+
+    </mat-sidenav>
+    <mat-sidenav-content class="page-wrapper">
+      <div class="page-content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

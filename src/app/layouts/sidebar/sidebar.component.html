@@ -1,0 +1,466 @@
+<mat-nav-list appAccordion>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="rejaBuyichaNazorat">
+    <a appAccordionLink [routerLink]="['/','rejaBuyichaNazorat']">
+      <mat-icon>assignment</mat-icon>
+      <span>Режа бўйича назорат</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="rejadanTashqariNazorat">
+    <a appAccordionLink [routerLink]="['/','rejadanTashqariNazorat']">
+      <mat-icon>chrome_reader_mode</mat-icon>
+      <span>Режадан ташқари назорат</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="fumigatsiyaNazorati">
+    <a appAccordionLink [routerLink]="['/','fumigatsiyaNazorati']">
+      <mat-icon>dashboard</mat-icon>
+      <span>Фумигация назорати</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="yozilganSertifikatlar">
+    <a appAccordionLink [routerLink]="['/','yozilganSertifikatlar']">
+      <mat-icon>class</mat-icon>
+      <span>Ёзилган сертификатлар</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="blankaKirimi">
+    <a appAccordionLink [routerLink]="['/','blankaKirimi']">
+      <mat-icon>dns</mat-icon>
+      <span>Бланка кирим</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="preparatKirimi">
+    <a appAccordionLink [routerLink]="['/','preparatKirimi']">
+      <mat-icon>view_agenda</mat-icon>
+      <span>Препарат кирим</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="blankaChiqimi">
+    <a appAccordionLink [routerLink]="['/','blankaChiqimi']">
+      <mat-icon>featured_play_list</mat-icon>
+      <span>Бланка чиқим</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="preparatChiqimi">
+    <a appAccordionLink [routerLink]="['/','preparatChiqimi']">
+      <mat-icon>view_array</mat-icon>
+      <span>Препарат чиқим</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected">
+    <a appAccordionLink [routerLink]="['/','planKiritish']">
+      <mat-icon>dialpad</mat-icon>
+      <span>План киритиш</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected">
+    <a appAccordionLink [routerLink]="['/','labaratoriya']">
+      <mat-icon>queue_play_next</mat-icon>
+      <span>Лабаратория</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="fumigatsiya">
+    <a appAccordionLink [routerLink]="['/','fumigatsiya']">
+      <mat-icon>kitchen</mat-icon>
+      <span>Фумигация</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="eksport">
+    <a appAccordionLink [routerLink]="['/','eksport']">
+      <mat-icon>flight_takeoff</mat-icon>
+      <span>Экспорт</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="karantinRuxsatnomasi">
+    <a appAccordionLink [routerLink]="['/','karantinRuxsatnomasi']">
+      <mat-icon>payment</mat-icon>
+      <span>Карантин рухсатномаси</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="ekspertiza">
+    <a appAccordionLink [routerLink]="['/','ekspertiza']">
+      <mat-icon>perm_media</mat-icon>
+      <span>Экспертиза</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected" group="kurik">
+    <a appAccordionLink [routerLink]="['/','kurik']">
+      <mat-icon>receipt</mat-icon>
+      <span>Кўрик</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item routerLinkActive="selected" group="tranzitYukKurigi">
+    <a appAccordionLink [routerLink]="['/','tranzitYukKurigi']">
+      <mat-icon>local_shipping</mat-icon>
+      <span>Транзит юк кўриги</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item routerLinkActive="selected" group="xodimBlankaChiqimi">
+    <a appAccordionLink [routerLink]="['/','xodimBlankaChiqimi']">
+      <mat-icon>vertical_split</mat-icon>
+      <span>Бланка чиқими (Ходим) </span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item routerLinkActive="selected" group="ishdanBushatishBuyrugi">
+    <a appAccordionLink [routerLink]="['/','ishdanBushatishBuyrugi']">
+      <mat-icon>person_add_disabled</mat-icon>
+      <span>Ходимни ишдан бўшатиш</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item routerLinkActive="selected" group="lavozimniUzgartirishBuyrugi">
+    <a appAccordionLink [routerLink]="['/','lavozimniUzgartirishBuyrugi']">
+      <mat-icon>people_outline</mat-icon>
+      <span>Лавозимини ўзгартириш </span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+  <!--background: #116e5d;-->
+
+  <mat-accordion appAccordion>
+    <mat-expansion-panel style="width: 217px; margin: 14px; " appAccordionLink routerLinkActive="selected">
+      <mat-expansion-panel-header style="padding: 10px">
+        <mat-panel-title style="color: #e5edef">
+          <mat-icon style="margin-top: 8px; width: 45px;">layers</mat-icon>
+          Асосий маълумотлар
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <a appAccordionLink [routerLink]="['/','bank']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">money</mat-icon>
+        <span style="color: #e5edef">Банк</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','tashkilot']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">location_city</mat-icon>
+        <span style="color: #e5edef">Карантин ташкилотлари</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','viloyatlar']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">domain</mat-icon>
+        <span style="color: #e5edef">Вилоят</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','tumanlar']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">local_library</mat-icon>
+        <span style="color: #e5edef">Туман/Шахар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','qfy']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">category</mat-icon>
+        <span style="color: #e5edef">ҚФЙ</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','mfy']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">art_track</mat-icon>
+        <span style="color: #e5edef">МФЙ</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','massivlar']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">texture</mat-icon>
+        <span style="color: #e5edef">Массив/Кўча</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','fermerXujaligi']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">markunread_mailbox</mat-icon>
+        <span style="color: #e5edef">Юридик ташкилотлар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','kurashUsullari']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">nature_people</mat-icon>
+        <span style="color: #e5edef">Кураш усуллари</span>
+        <span fxFlex></span>
+      </a>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel style="width: 217px; margin: 14px; background: #116e5d;" appAccordionLink
+                         routerLinkActive="selected">
+      <mat-expansion-panel-header style="padding: 10px">
+        <mat-panel-title style="color: #e5edef">
+          <mat-icon style="margin-top: 8px; width: 45px;">group_work</mat-icon>
+          Умумий касалликлар
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a appAccordionLink [routerLink]="['/','kasalliklarTuri']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">opacity</mat-icon>
+        <span style="color: #e5edef">Касалликлар тури</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','kasalliklar']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">image_aspect_ratio</mat-icon>
+        <span style="color: #e5edef">Касалликлар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','zararkunandalarTuri']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">offline_bolt</mat-icon>
+        <span style="color: #e5edef">Зараркунандалар тури</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','zararkunandalar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">gesture</mat-icon>
+        <span style="color: #e5edef">Зараркунандалар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','begonaUtlarTuri']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">whatshot</mat-icon>
+        <span style="color: #e5edef">Бегона ўтлар тури</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','begonaUtlar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">grain</mat-icon>
+        <span style="color: #e5edef">Бегона ўтлар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','xulosalar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">flip_to_back</mat-icon>
+        <span style="color: #e5edef">Хулосалар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','kurashishUsuliXulosa']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">blur_circular</mat-icon>
+        <span style="color: #e5edef">Курашиш усули хулосаси</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','labaratoriyaXulosa']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">notes</mat-icon>
+        <span style="color: #e5edef">Лабаратория хулосаси</span>
+        <span fxFlex></span>
+      </a>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel style="width: 217px; margin: 14px; background: #116e5d;" appAccordionLink
+                         routerLinkActive="selected">
+      <mat-expansion-panel-header style="padding: 10px">
+        <mat-panel-title style="color: #e5edef">
+          <mat-icon style="margin-top: 8px; width: 45px;">supervisor_account</mat-icon>
+          Ходимлар маълумотлари
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a appAccordionLink [routerLink]="['/','xodimlar']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">perm_identity</mat-icon>
+        <span style="color: #e5edef">Ходимлар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','user']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">how_to_reg</mat-icon>
+        <span style="color: #e5edef">Фойдаланувчи</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','lavozimlar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">how_to_vote</mat-icon>
+        <span style="color: #e5edef">Лавозимлар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','bulimlar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">rate_review</mat-icon>
+        <span style="color: #e5edef">Бўлимлар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','bulinmalar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">meeting_room</mat-icon>
+        <span style="color: #e5edef">Бўлинмалар</span>
+        <span fxFlex></span>
+      </a>
+      <a appAccordionLink [routerLink]="['/','xuquqlar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">vpn_key</mat-icon>
+        <span style="color: #e5edef">Хуқуқлар</span>
+        <span fxFlex></span>
+      </a>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel style="width: 217px; margin: 14px; background: #116e5d;" appAccordionLink
+                         routerLinkActive="selected">
+      <mat-expansion-panel-header style="padding: 10px">
+        <mat-panel-title style="color: #e5edef">
+          <mat-icon style="margin-top: 8px; width: 45px;">poll</mat-icon>
+          Фумигация маълумотлари
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a appAccordionLink [routerLink]="['/','fumigatsiyaTuri']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">confirmation_number</mat-icon>
+        <span style="color: #e5edef">Фумигация тури</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','fumigatsiyaForSpravochnik']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">nfc</mat-icon>
+        <span style="color: #e5edef">Фумигация</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','preparatlar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">local_hospital</mat-icon>
+        <span style="color: #e5edef">Препаратлар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','ombor']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">camera_roll</mat-icon>
+        <span style="color: #e5edef">Омбор</span>
+        <span fxFlex></span>
+      </a>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel style="width: 217px; margin: 14px; background: #116e5d;" appAccordionLink
+                         routerLinkActive="selected">
+      <mat-expansion-panel-header style="padding: 10px">
+        <mat-panel-title style="color: #e5edef">
+          <mat-icon style="margin-top: 8px; width: 45px;">blur_linear</mat-icon>
+          Қўшимча маълумотлар
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a appAccordionLink [routerLink]="['/','blankalar']"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">donut_small</mat-icon>
+        <span style="color: #e5edef">Бланкалар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','yetkazibBeruvchilar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">person_add</mat-icon>
+        <span style="color: #e5edef">Етказиб берувчилар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','ulchovBirligi']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">more</mat-icon>
+        <span style="color: #e5edef">Ўлчов бирлиги</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','faoliyatTuri']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">pages</mat-icon>
+        <span style="color: #e5edef">Фаолият тури</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','faloyitaYunalishlari']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">widgets</mat-icon>
+        <span style="color: #e5edef">Фаолият йўналишлари</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','qadoqlar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">business_center</mat-icon>
+        <span style="color: #e5edef">Қадоқлар</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','qushimchaDekloratsiya']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">store_mall_directory</mat-icon>
+        <span style="color: #e5edef">Кўшимча деклорация</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','maxsulotlar']" style="padding: 18px 0px 0px 0px;"
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">local_drink</mat-icon>
+        <span style="color: #e5edef">Махсулот</span>
+        <span fxFlex></span>
+      </a>
+
+      <a appAccordionLink [routerLink]="['/','davlatlar']" style="padding: 18px 0px 0px 0px; "
+         style="padding: 10px 10px 5px 10px;margin-left: -11px;margin-bottom: 8px;" routerLinkActive="selected">
+        <mat-icon style="color: #e5edef; width: 31px">view_compact</mat-icon>
+        <span style="color: #e5edef">Давлатлар</span>
+        <span fxFlex></span>
+      </a>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</mat-nav-list>
+
